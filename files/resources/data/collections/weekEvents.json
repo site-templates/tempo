@@ -1,0 +1,74 @@
+[
+    {
+        "column": "Mon",
+        "label": "Standup",
+        "kind": "theirs",
+        "size": "sm"
+    },
+    {
+        "column": "Mon",
+        "label": "Free",
+        "kind": "free",
+        "size": "md"
+    },
+    {
+        "column": "Mon",
+        "label": "Design review",
+        "kind": "yours",
+        "size": "lg"
+    },
+    {
+        "column": "Tue",
+        "label": "Free",
+        "kind": "free",
+        "size": "sm"
+    },
+    {
+        "column": "Tue",
+        "label": "School run",
+        "kind": "theirs",
+        "size": "md"
+    },
+    {
+        "column": "Tue",
+        "label": "Free",
+        "kind": "free",
+        "size": "md"
+    },
+    {
+        "column": "Wed",
+        "label": "Intro call",
+        "kind": "yours",
+        "size": "md"
+    },
+    {
+        "column": "Wed",
+        "label": "Free",
+        "kind": "free",
+        "size": "lg"
+    },
+    {
+        "column": "Thu",
+        "label": "Free",
+        "kind": "free",
+        "size": "md"
+    },
+    {
+        "column": "Thu",
+        "label": "Deep work",
+        "kind": "theirs",
+        "size": "lg"
+    },
+    {
+        "column": "Fri",
+        "label": "Retro",
+        "kind": "yours",
+        "size": "sm"
+    },
+    {
+        "column": "Fri",
+        "label": "Free",
+        "kind": "free",
+        "size": "lg"
+    }
+]

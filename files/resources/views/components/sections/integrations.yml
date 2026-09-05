@@ -1,0 +1,48 @@
+# The visual editor's contract for integrations.blade.php.
+title: Integrations
+description: Copy on the left, a hairline-ruled grid of partner marks on the right
+fields:
+    heading:
+        type: text
+        label: "Heading"
+        default: "It writes to the tools you already open"
+    body:
+        type: textarea
+        label: "One paragraph"
+        rows: 3
+        default: "Calendars, video rooms, payments and the place your team talks. Connect one in a couple of clicks and Tempo keeps them in step."
+    ctaText:
+        type: text
+        label: "Button text"
+        default: "See every integration"
+    ctaLink:
+        type: url
+        label: "Button link"
+        default: "/features#integrations"
+    showSecondary:
+        type: toggle
+        label: "Show the text link"
+        default: "1"
+    secondaryText:
+        type: text
+        label: "Text link"
+        default: "Read the API docs"
+    secondaryLink:
+        type: url
+        label: "Text link address"
+        default: "/blog"
+    items:
+        type: repeater
+        label: "Tiles"
+        add_button_label: "Add tile"
+        item_label: name
+        source: collections.integrations
+        sub_fields:
+            name:
+                type: text
+                label: "Name"
+                default: "Company"
+            image:
+                type: image
+                label: "Mark"
+                default: "https://assets.ui.sh/logos/relay.svg?color=%236f727a"

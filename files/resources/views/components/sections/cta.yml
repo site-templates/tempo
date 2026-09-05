@@ -1,0 +1,37 @@
+# The visual editor's contract for cta.blade.php.
+title: Closing call to action
+description: The centred close, on a panel of drawn tiles
+fields:
+    heading:
+        type: text
+        label: "Heading"
+        default: "Send one link instead of four emails"
+    body:
+        type: textarea
+        label: "One paragraph"
+        rows: 3
+        default: "Free for one person, forever. Two minutes to connect a calendar, and the next meeting arranges itself."
+    ctaText:
+        type: text
+        label: "Button text"
+        default: "Start for free"
+    ctaLink:
+        type: url
+        label: "Button link"
+        default: "#"
+    showSecondary:
+        type: toggle
+        label: "Show second button"
+        default: "1"
+    secondaryText:
+        type: text
+        label: "Second button text"
+        default: "Talk to us first"
+    secondaryLink:
+        type: url
+        label: "Second button link"
+        default: "mailto:hello@example.com"
+    note:
+        type: text
+        label: "Line under the buttons"
+        default: "No card, no trial clock, nothing to cancel."

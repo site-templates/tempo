@@ -1,0 +1,34 @@
+[
+    {
+        "id": "individuals",
+        "title": "One link that holds your whole week",
+        "body": "Connect every calendar you keep, set the hours you actually work, and hand out a single address. Tempo checks all of them before it offers anybody a time.",
+        "mock": "booking",
+        "flip": "0",
+        "layout": "stacked"
+    },
+    {
+        "id": "teams",
+        "title": "Availability that belongs to the group",
+        "body": "Pool a team and let bookings go round-robin by who has taken the fewest, or find the one hour four people share. Working hours can differ; the maths does not care.",
+        "mock": "overlay",
+        "flip": "1",
+        "layout": "split"
+    },
+    {
+        "id": "recruiting",
+        "title": "Panels booked without a reply-all",
+        "body": "Send one link to the candidate. Tempo finds the slot the whole panel shares, holds it, and writes it into every interviewer's calendar at once.",
+        "mock": "availability",
+        "flip": "0",
+        "layout": "split"
+    },
+    {
+        "id": "support",
+        "title": "Callbacks the customer chooses",
+        "body": "Put the booking page at the end of a ticket. The customer picks a time that suits them, and the agent's day stops being a queue of interruptions.",
+        "mock": "reminder",
+        "flip": "1",
+        "layout": "split"
+    }
+]

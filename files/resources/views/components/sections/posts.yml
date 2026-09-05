@@ -1,0 +1,53 @@
+# The visual editor's contract for posts.blade.php.
+title: Post list
+description: The blog index as an editorial list, one row a post
+fields:
+    readLabel:
+        type: text
+        label: "Read label"
+        description: "Announced to screen readers on each row."
+        default: "Read"
+    items:
+        type: repeater
+        label: "Posts"
+        description: "The slug decides the post URL, and the link should match it."
+        add_button_label: "Add post"
+        item_label: title
+        source: collections.posts
+        sub_fields:
+            title:
+                type: text
+                label: "Title"
+                default: "A new post"
+            description:
+                type: textarea
+                label: "Summary"
+                default: "What the post is about."
+            category:
+                type: text
+                label: "Category"
+                default: "Ideas"
+            dateFormatted:
+                type: text
+                label: "Date"
+                default: "June 1, 2027"
+            readTime:
+                type: text
+                label: "Reading time"
+                default: "5 min read"
+            author:
+                type: text
+                label: "Author"
+                default: "A writer"
+            authorAvatar:
+                type: image
+                label: "Author photo"
+                default: "https://assets.ui.sh/avatars/4.webp?size=96&grayscale"
+            link:
+                type: url
+                label: "Link"
+                default: "/blog/a-new-post"
+            slug:
+                type: text
+                label: "Slug"
+                default: "a-new-post"

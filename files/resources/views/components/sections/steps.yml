@@ -1,0 +1,85 @@
+# The visual editor's contract for steps.blade.php.
+title: How it works
+description: Three numbered steps, each over the screen it describes
+fields:
+    heading:
+        type: text
+        label: "Heading"
+        default: "Set it up once, in about ten minutes"
+    body:
+        type: textarea
+        label: "One paragraph"
+        rows: 3
+        default: "After that the only thing you do is send a link. Everything below is a real screen, drawn rather than photographed, so it stays sharp."
+    steps:
+        type: repeater
+        label: "Steps"
+        add_button_label: "Add step"
+        item_label: title
+        source: collections.steps
+        sub_fields:
+            number:
+                type: text
+                label: "Number"
+                default: "04"
+            title:
+                type: text
+                label: "Title"
+                default: "A new step"
+            body:
+                type: textarea
+                label: "Text"
+                default: "What happens at this step."
+            mock:
+                type: select
+                label: "Drawn screen"
+                default: "calendars"
+                options:
+                    calendars: "Connected calendars"
+                    availability: "Working hours"
+                    link: "Booking link"
+    calendars:
+        type: repeater
+        label: "Calendars"
+        add_button_label: "Add calendar"
+        item_label: name
+        source: collections.calendars
+        sub_fields:
+            name:
+                type: text
+                label: "Name"
+                default: "Work"
+            detail:
+                type: text
+                label: "Account or note"
+                default: "you@example.com"
+            state:
+                type: select
+                label: "State"
+                default: "reads"
+                options:
+                    reads: "Checked for conflicts"
+                    writes: "Receives bookings"
+    hours:
+        type: repeater
+        label: "Working hours"
+        add_button_label: "Add day"
+        item_label: day
+        source: collections.hours
+        sub_fields:
+            day:
+                type: text
+                label: "Day"
+                default: "Mon"
+            from:
+                type: text
+                label: "From"
+                default: "9:00 am"
+            to:
+                type: text
+                label: "To"
+                default: "5:00 pm"
+            on:
+                type: toggle
+                label: "Available"
+                default: "1"

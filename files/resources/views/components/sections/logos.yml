@@ -1,0 +1,24 @@
+# The visual editor's contract for logos.blade.php.
+title: Logo strip
+description: A hairline band under the hero — one line of copy and six customer marks
+fields:
+    label:
+        type: textarea
+        label: "Line of copy"
+        rows: 2
+        default: "Teams at these companies stopped emailing about times."
+    logos:
+        type: repeater
+        label: "Logos"
+        add_button_label: "Add logo"
+        item_label: name
+        source: collections.logos
+        sub_fields:
+            name:
+                type: text
+                label: "Company"
+                default: "Company"
+            image:
+                type: image
+                label: "Logo"
+                default: "https://assets.ui.sh/logos/relay.svg?color=%236f727a"

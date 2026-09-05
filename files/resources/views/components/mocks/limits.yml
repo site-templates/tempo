@@ -1,0 +1,40 @@
+# The visual editor's contract for limits.blade.php.
+title: Notice and buffers
+description: The drawn form that sets the rules stopping a calendar from filling up
+fields:
+    heading:
+        type: text
+        label: "Card heading"
+        default: "Notice and buffers"
+    noticeLabel:
+        type: text
+        label: "Notice field label"
+        default: "Minimum notice"
+    noticeValue:
+        type: text
+        label: "Notice value"
+        default: "4 hours"
+    beforeLabel:
+        type: text
+        label: "Buffer-before label"
+        default: "Buffer before"
+    beforeValue:
+        type: text
+        label: "Buffer-before value"
+        default: "10 mins"
+    afterLabel:
+        type: text
+        label: "Buffer-after label"
+        default: "Buffer after"
+    afterValue:
+        type: text
+        label: "Buffer-after value"
+        default: "10 mins"
+    capLabel:
+        type: text
+        label: "Daily cap label"
+        default: "Most bookings in a day"
+    capValue:
+        type: text
+        label: "Daily cap value"
+        default: "4"

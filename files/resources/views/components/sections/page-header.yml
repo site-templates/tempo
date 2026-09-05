@@ -1,0 +1,37 @@
+# The visual editor's contract for page-header.blade.php.
+title: Page header
+description: The left-aligned opening of every page that is not the homepage
+fields:
+    heading:
+        type: text
+        label: "Page heading"
+        default: "Page title"
+    body:
+        type: textarea
+        label: "One paragraph"
+        rows: 3
+        default: ""
+    showCta:
+        type: toggle
+        label: "Show the buttons"
+        default: "0"
+    ctaText:
+        type: text
+        label: "Button text"
+        default: "Start for free"
+    ctaLink:
+        type: url
+        label: "Button link"
+        default: "#"
+    showSecondary:
+        type: toggle
+        label: "Show second button"
+        default: "0"
+    secondaryText:
+        type: text
+        label: "Second button text"
+        default: "Book a demo"
+    secondaryLink:
+        type: url
+        label: "Second button link"
+        default: "#"

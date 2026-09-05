@@ -1,0 +1,30 @@
+[
+    {
+        "size": "large",
+        "quote": "We were spending the first four emails of every deal working out a time. Now the first email has a link in it and the second one is about the actual work.",
+        "name": "Rowan Adeyemi",
+        "role": "Head of Sales, Axiom",
+        "avatar": "https://assets.ui.sh/avatars/3.webp?size=128&grayscale"
+    },
+    {
+        "size": "small",
+        "quote": "Set it up in ten minutes and cancelled the tool we were paying four times as much for.",
+        "name": "Sasha Nkemelu",
+        "role": "Founder, Looply",
+        "avatar": "https://assets.ui.sh/avatars/7.webp?size=96&grayscale"
+    },
+    {
+        "size": "small",
+        "quote": "Twelve interviews a week, none of them arranged by a human being any more.",
+        "name": "Kit Farrow",
+        "role": "Recruiting, Orbital",
+        "avatar": "https://assets.ui.sh/avatars/11.webp?size=96&grayscale"
+    },
+    {
+        "size": "small",
+        "quote": "The overlay is the part clients mention. They stop guessing and just pick.",
+        "name": "Noor Vandel",
+        "role": "Principal, Concise",
+        "avatar": "https://assets.ui.sh/avatars/14.webp?size=96&grayscale"
+    }
+]

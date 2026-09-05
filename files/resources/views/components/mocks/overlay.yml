@@ -1,0 +1,66 @@
+# The visual editor's contract for overlay.blade.php.
+title: Calendar overlay
+description: The booker's week laid over yours, drawn as five columns of blocks
+fields:
+    heading:
+        type: text
+        label: "Card heading"
+        default: "Overlay my calendar"
+    yoursLabel:
+        type: text
+        label: "Your key label"
+        default: "Yours"
+    theirsLabel:
+        type: text
+        label: "Their key label"
+        default: "Theirs"
+    freeLabel:
+        type: text
+        label: "Free-block label"
+        default: "Free"
+    columns:
+        type: repeater
+        label: "Columns"
+        add_button_label: "Add column"
+        item_label: day
+        source: collections.weekColumns
+        sub_fields:
+            day:
+                type: text
+                label: "Weekday"
+                default: "Mon"
+            date:
+                type: text
+                label: "Date"
+                default: "14"
+    events:
+        type: repeater
+        label: "Blocks"
+        add_button_label: "Add block"
+        item_label: label
+        source: collections.weekEvents
+        sub_fields:
+            column:
+                type: text
+                label: "Weekday"
+                default: "Mon"
+            label:
+                type: text
+                label: "Label"
+                default: "Free"
+            kind:
+                type: select
+                label: "Kind"
+                default: "free"
+                options:
+                    yours: "Yours"
+                    theirs: "Theirs"
+                    free: "Free for both"
+            size:
+                type: select
+                label: "Height"
+                default: "md"
+                options:
+                    sm: "Short"
+                    md: "Medium"
+                    lg: "Tall"

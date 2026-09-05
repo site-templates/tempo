@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Work",
+        "detail": "iris@axiom.com",
+        "state": "reads"
+    },
+    {
+        "name": "Personal",
+        "detail": "iris@fastmail.com",
+        "state": "reads"
+    },
+    {
+        "name": "Studio",
+        "detail": "Shared, 3 people",
+        "state": "writes"
+    }
+]

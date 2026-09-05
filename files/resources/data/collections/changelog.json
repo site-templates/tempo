@@ -1,0 +1,38 @@
+[
+    {
+        "version": "3.4",
+        "dateFormatted": "May 30, 2027",
+        "title": "Availability that follows the season",
+        "content": "<p>Recurring events now recompute every occurrence against the zone rather than the offset, which means a weekly call booked in March stays at the same local hour on both ends when daylight saving moves.</p><ul><li>Recurring occurrences store a zone, not an offset</li><li>A warning appears when a series crosses a transition</li><li>Existing series are migrated on first edit</li></ul>"
+    },
+    {
+        "version": "3.3",
+        "dateFormatted": "May 9, 2027",
+        "title": "Calendar overlay for bookers",
+        "content": "<p>Anyone opening your booking page can now connect their own calendar and see it laid over your free times. Nothing is stored, nothing is shared with you — the overlay is drawn in their browser and forgotten when they close the tab.</p>"
+    },
+    {
+        "version": "3.2",
+        "dateFormatted": "April 18, 2027",
+        "title": "Routing forms",
+        "content": "<p>Ask up to five questions before a booking, and send the answer to whichever calendar should have it. A question can branch, and a branch can end in a different event type with different availability.</p><ul><li>Short answer, choice and yes-or-no questions</li><li>Branch on any answer</li><li>Answers arrive in the calendar invite</li></ul>"
+    },
+    {
+        "version": "3.1",
+        "dateFormatted": "March 27, 2027",
+        "title": "Payments hold the slot",
+        "content": "<p>When an event type has a price, the slot is held for fifteen minutes while the payment completes, instead of being released the moment the visitor leaves the page. Failed payments release it immediately.</p>"
+    },
+    {
+        "version": "3.0",
+        "dateFormatted": "March 6, 2027",
+        "title": "Teams, pooled properly",
+        "content": "<p>Round-robin now balances by how many meetings each person has actually taken this month, not by whose turn it is in a list. Collective availability finds the hour that everyone shares, including people whose working hours differ.</p><ul><li>Fairness-weighted round-robin</li><li>Collective availability across mixed working hours</li><li>Shared event types with one owner</li></ul>"
+    },
+    {
+        "version": "2.9",
+        "dateFormatted": "February 12, 2027",
+        "title": "Embeds without an iframe scrollbar",
+        "content": "<p>The embed now reports its own height to the host page, so the booking page grows and shrinks in place instead of sitting inside a box with its own scrollbar. One line of markup, unchanged.</p>"
+    }
+]

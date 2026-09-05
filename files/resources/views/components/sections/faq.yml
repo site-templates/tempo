@@ -1,0 +1,36 @@
+# The visual editor's contract for faq.blade.php.
+title: Questions
+description: Heading on the left, an accordion of questions on the right
+fields:
+    heading:
+        type: text
+        label: "Heading"
+        default: "Questions we get asked first"
+    body:
+        type: textarea
+        label: "One paragraph"
+        rows: 2
+        default: "If yours is not here, write to us. A person answers, usually the same day."
+    contactText:
+        type: text
+        label: "Link text"
+        default: "Ask us anything"
+    contactLink:
+        type: url
+        label: "Link address"
+        default: "mailto:hello@example.com"
+    items:
+        type: repeater
+        label: "Questions"
+        add_button_label: "Add question"
+        item_label: question
+        source: collections.faq
+        sub_fields:
+            question:
+                type: text
+                label: "Question"
+                default: "A new question?"
+            answer:
+                type: textarea
+                label: "Answer"
+                default: "The answer, in a paragraph."

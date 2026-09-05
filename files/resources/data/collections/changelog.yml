@@ -1,0 +1,10 @@
+# Column types for changelog.json. The content column is rich text.
+fields:
+    version:
+        type: text
+    dateFormatted:
+        type: text
+    title:
+        type: text
+    content:
+        type: richtext

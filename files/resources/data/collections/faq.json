@@ -1,0 +1,26 @@
+[
+    {
+        "question": "Is there a free plan, and what is missing from it?",
+        "answer": "The free plan is free for one person, forever: unlimited event types, unlimited bookings, calendar sync and reminders. What it does not include is anything that involves other people's calendars — round-robin, collective availability and shared routing all sit on the paid plans."
+    },
+    {
+        "question": "Which calendars can Tempo read?",
+        "answer": "Anything that speaks CalDAV or exposes an API, which in practice covers the calendar you are already using at work and the one on your phone. Connect as many as you like; Tempo checks all of them for conflicts and writes the booking to the one you nominate."
+    },
+    {
+        "question": "What happens when someone reschedules?",
+        "answer": "They open the same link, pick a new time, and both calendars update. Nobody sends an email that begins with the word sorry. You can also set how late a reschedule is allowed to happen."
+    },
+    {
+        "question": "Can I take payment when someone books?",
+        "answer": "Yes. Connect a Stripe account and set a price on any event type. Tempo will hold the slot, take the payment at booking, and refund automatically if the meeting is cancelled inside the window you set."
+    },
+    {
+        "question": "Does it work for a team, not just one person?",
+        "answer": "That is what the Teams plan is for. Pool a group so bookings go round-robin by fairness or by who is free first, or use collective availability to find the one hour that four people share."
+    },
+    {
+        "question": "Can I put the booking page inside my own site?",
+        "answer": "One line of markup embeds it inline, as a popup, or behind a button. It inherits your colours, and the booking still lands in the same place."
+    }
+]

@@ -1,0 +1,26 @@
+# The visual editor's contract for reminder.blade.php.
+title: Booking notification
+description: The confirmation that lands after a booking, and the reminder it schedules
+fields:
+    title:
+        type: text
+        label: "Notification heading"
+        default: "Booking confirmed"
+    body:
+        type: textarea
+        label: "Notification text"
+        rows: 2
+        default: "Priya Raghavan booked a 30-minute intro call for Thursday at 9:30 am."
+    timeLabel:
+        type: text
+        label: "Timestamp"
+        default: "just now"
+    followTitle:
+        type: text
+        label: "Second card heading"
+        default: "Reminder scheduled"
+    followBody:
+        type: textarea
+        label: "Second card text"
+        rows: 2
+        default: "A text goes out one hour before, and a follow-up the morning after."

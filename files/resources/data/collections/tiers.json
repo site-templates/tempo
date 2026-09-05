@@ -1,0 +1,29 @@
+[
+    {
+        "name": "Free",
+        "audience": "For one person who books their own time.",
+        "monthly": "$0",
+        "yearly": "$0",
+        "cta": "Start for free",
+        "link": "#",
+        "featured": "0"
+    },
+    {
+        "name": "Pro",
+        "audience": "For professionals who charge for their time.",
+        "monthly": "$12",
+        "yearly": "$10",
+        "cta": "Start 14-day trial",
+        "link": "#",
+        "featured": "1"
+    },
+    {
+        "name": "Teams",
+        "audience": "For groups who share the load.",
+        "monthly": "$20",
+        "yearly": "$17",
+        "cta": "Start 14-day trial",
+        "link": "#",
+        "featured": "0"
+    }
+]

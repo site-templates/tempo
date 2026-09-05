@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Never get booked into a wall",
+        "body": "Set the least notice you will accept, a buffer either side of a meeting, and a limit on how many land in one day. Tempo refuses the rest before you have to.",
+        "mock": "limits",
+        "width": "wide"
+    },
+    {
+        "title": "A link people remember",
+        "body": "Your booking page lives on a short address you choose, not a string of characters nobody can read out loud.",
+        "mock": "link",
+        "width": "narrow"
+    },
+    {
+        "title": "Let them see their own week",
+        "body": "Bookers can lay their calendar over yours, so they pick a time that is free for both of you on the first try.",
+        "mock": "overlay",
+        "width": "narrow"
+    },
+    {
+        "title": "Fewer no-shows, and no chasing",
+        "body": "A reminder goes out by email or text before the meeting, and a follow-up after it, without you opening anything.",
+        "mock": "reminder",
+        "width": "wide"
+    }
+]

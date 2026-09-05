@@ -1,0 +1,30 @@
+# The visual editor's contract for link.blade.php.
+title: Booking link
+description: The booking address on its own chip, above the page it opens
+fields:
+    url:
+        type: text
+        label: "Booking address"
+        default: "tempo.co/iris"
+    copyLabel:
+        type: text
+        label: "Copy button label"
+        default: "Copy"
+    eventTitle:
+        type: text
+        label: "Event name"
+        default: "Intro call"
+    eventMeta:
+        type: text
+        label: "Length and location"
+        default: "30 minutes \u00b7 Video"
+    eventBody:
+        type: textarea
+        label: "What the meeting is for"
+        rows: 2
+        default: "Fifteen minutes to work out whether we can help."
+    footnote:
+        type: textarea
+        label: "Footnote"
+        rows: 2
+        default: "Change the handle whenever you like. Old links keep working."

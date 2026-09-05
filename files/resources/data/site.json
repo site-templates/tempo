@@ -1,0 +1,57 @@
+{
+    "name": "Tempo",
+    "nav_links": [
+        { "text": "Features", "url": "/features" },
+        { "text": "Pricing", "url": "/pricing" },
+        { "text": "Changelog", "url": "/changelog" },
+        { "text": "Blog", "url": "/blog" }
+    ],
+    "solution_links": [
+        { "text": "For individuals", "url": "/features#individuals", "description": "One link that holds your whole week" },
+        { "text": "For teams", "url": "/features#teams", "description": "Round-robin, collective and pooled availability" },
+        { "text": "For recruiting", "url": "/features#recruiting", "description": "Panels booked without a single reply-all" },
+        { "text": "For support", "url": "/features#support", "description": "Callbacks customers choose themselves" }
+    ],
+    "footer_columns": [
+        {
+            "text": "Product",
+            "url": "/features",
+            "children": [
+                { "text": "Features", "url": "/features" },
+                { "text": "Pricing", "url": "/pricing" },
+                { "text": "Changelog", "url": "/changelog" },
+                { "text": "Integrations", "url": "/features#integrations" }
+            ]
+        },
+        {
+            "text": "Solutions",
+            "url": "/features",
+            "children": [
+                { "text": "Individuals", "url": "/features#individuals" },
+                { "text": "Teams", "url": "/features#teams" },
+                { "text": "Recruiting", "url": "/features#recruiting" },
+                { "text": "Support", "url": "/features#support" }
+            ]
+        },
+        {
+            "text": "Resources",
+            "url": "/blog",
+            "children": [
+                { "text": "Blog", "url": "/blog" },
+                { "text": "Help centre", "url": "/blog" },
+                { "text": "Status", "url": "/changelog" },
+                { "text": "Contact", "url": "mailto:hello@example.com" }
+            ]
+        },
+        {
+            "text": "Company",
+            "url": "/blog",
+            "children": [
+                { "text": "About", "url": "/blog" },
+                { "text": "Careers", "url": "/blog" },
+                { "text": "Privacy", "url": "/blog" },
+                { "text": "Terms", "url": "/blog" }
+            ]
+        }
+    ]
+}

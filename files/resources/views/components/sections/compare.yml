@@ -1,0 +1,53 @@
+# The visual editor's contract for compare.blade.php.
+title: Comparison table
+description: The plans line by line, on the page rather than in a card
+fields:
+    heading:
+        type: text
+        label: "Heading"
+        default: "Line by line"
+    body:
+        type: textarea
+        label: "One paragraph"
+        rows: 2
+        default: "The same table our support team uses when somebody asks which plan they need."
+    featureLabel:
+        type: text
+        label: "First column heading"
+        default: "Feature"
+    freeLabel:
+        type: text
+        label: "Second column heading"
+        default: "Free"
+    proLabel:
+        type: text
+        label: "Third column heading"
+        default: "Pro"
+    teamsLabel:
+        type: text
+        label: "Fourth column heading"
+        default: "Teams"
+    items:
+        type: repeater
+        label: "Rows"
+        description: "A cell reading yes shows a tick, no shows a dash, and anything else prints as written."
+        add_button_label: "Add row"
+        item_label: feature
+        source: collections.comparison
+        sub_fields:
+            feature:
+                type: text
+                label: "Feature"
+                default: "Something to compare"
+            free:
+                type: text
+                label: "Free"
+                default: "no"
+            pro:
+                type: text
+                label: "Pro"
+                default: "yes"
+            teams:
+                type: text
+                label: "Teams"
+                default: "yes"

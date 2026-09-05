@@ -1,0 +1,70 @@
+# The visual editor's contract for post.blade.php.
+title: Post layout
+description: The reading layout for a single post — its header, the body, and the rest of the collection
+fields:
+    title:
+        type: text
+        label: "Title"
+        description: "Set by the post itself."
+        default: "Post"
+    description:
+        type: textarea
+        label: "Summary"
+        description: "Set by the post itself."
+        rows: 3
+        default: ""
+    category:
+        type: text
+        label: "Category"
+        default: ""
+    dateFormatted:
+        type: text
+        label: "Date"
+        default: ""
+    readTime:
+        type: text
+        label: "Reading time"
+        default: ""
+    author:
+        type: text
+        label: "Author"
+        default: ""
+    authorAvatar:
+        type: image
+        label: "Author photo"
+        default: ""
+    backText:
+        type: text
+        label: "Back link text"
+        default: "All writing"
+    backLink:
+        type: url
+        label: "Back link address"
+        default: "/blog"
+    moreHeading:
+        type: text
+        label: "Heading above the other posts"
+        default: "More from the blog"
+    more:
+        type: repeater
+        label: "Other posts"
+        add_button_label: "Add post"
+        item_label: title
+        source: collections.posts
+        sub_fields:
+            title:
+                type: text
+                label: "Title"
+                default: "A new post"
+            category:
+                type: text
+                label: "Category"
+                default: "Ideas"
+            dateFormatted:
+                type: text
+                label: "Date"
+                default: "June 1, 2027"
+            link:
+                type: url
+                label: "Link"
+                default: "/blog/a-new-post"

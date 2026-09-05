@@ -1,0 +1,70 @@
+[
+    {
+        "tier": "Free",
+        "title": "Unlimited event types"
+    },
+    {
+        "tier": "Free",
+        "title": "Unlimited bookings"
+    },
+    {
+        "tier": "Free",
+        "title": "Calendar sync"
+    },
+    {
+        "tier": "Free",
+        "title": "Email reminders"
+    },
+    {
+        "tier": "Free",
+        "title": "Your own booking link"
+    },
+    {
+        "tier": "Pro",
+        "title": "Everything in Free"
+    },
+    {
+        "tier": "Pro",
+        "title": "Payments through Stripe"
+    },
+    {
+        "tier": "Pro",
+        "title": "Text reminders and follow-ups"
+    },
+    {
+        "tier": "Pro",
+        "title": "Routing forms"
+    },
+    {
+        "tier": "Pro",
+        "title": "Remove Tempo branding"
+    },
+    {
+        "tier": "Pro",
+        "title": "Recurring events"
+    },
+    {
+        "tier": "Teams",
+        "title": "Everything in Pro"
+    },
+    {
+        "tier": "Teams",
+        "title": "Round-robin availability"
+    },
+    {
+        "tier": "Teams",
+        "title": "Collective availability"
+    },
+    {
+        "tier": "Teams",
+        "title": "Shared event types"
+    },
+    {
+        "tier": "Teams",
+        "title": "Admin and reporting"
+    },
+    {
+        "tier": "Teams",
+        "title": "Priority support"
+    }
+]

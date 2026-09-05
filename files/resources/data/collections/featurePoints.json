@@ -1,0 +1,50 @@
+[
+    {
+        "feature": "individuals",
+        "title": "Unlimited event types, each with its own rules"
+    },
+    {
+        "feature": "individuals",
+        "title": "Conflicts checked across every connected calendar"
+    },
+    {
+        "feature": "individuals",
+        "title": "Times shown in the visitor's own zone, automatically"
+    },
+    {
+        "feature": "teams",
+        "title": "Round-robin weighted by meetings already taken"
+    },
+    {
+        "feature": "teams",
+        "title": "Collective availability across mixed working hours"
+    },
+    {
+        "feature": "teams",
+        "title": "Shared event types with a single owner"
+    },
+    {
+        "feature": "recruiting",
+        "title": "One link for a panel of any size"
+    },
+    {
+        "feature": "recruiting",
+        "title": "Slots held while the candidate decides"
+    },
+    {
+        "feature": "recruiting",
+        "title": "Interview feedback forms attached to the invite"
+    },
+    {
+        "feature": "support",
+        "title": "Booking page embeddable in your help desk"
+    },
+    {
+        "feature": "support",
+        "title": "Reminders by text an hour before"
+    },
+    {
+        "feature": "support",
+        "title": "Reschedule without opening another ticket"
+    }
+]

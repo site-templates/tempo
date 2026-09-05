@@ -1,0 +1,56 @@
+[
+    {
+        "feature": "Bookings a month",
+        "free": "Unlimited",
+        "pro": "Unlimited",
+        "teams": "Unlimited"
+    },
+    {
+        "feature": "Connected calendars",
+        "free": "2",
+        "pro": "Unlimited",
+        "teams": "Unlimited"
+    },
+    {
+        "feature": "Text reminders",
+        "free": "no",
+        "pro": "yes",
+        "teams": "yes"
+    },
+    {
+        "feature": "Payments at booking",
+        "free": "no",
+        "pro": "yes",
+        "teams": "yes"
+    },
+    {
+        "feature": "Routing forms",
+        "free": "no",
+        "pro": "yes",
+        "teams": "yes"
+    },
+    {
+        "feature": "Round-robin availability",
+        "free": "no",
+        "pro": "no",
+        "teams": "yes"
+    },
+    {
+        "feature": "Collective availability",
+        "free": "no",
+        "pro": "no",
+        "teams": "yes"
+    },
+    {
+        "feature": "Admin and reporting",
+        "free": "no",
+        "pro": "no",
+        "teams": "yes"
+    },
+    {
+        "feature": "Support",
+        "free": "Help centre",
+        "pro": "Email",
+        "teams": "Priority"
+    }
+]

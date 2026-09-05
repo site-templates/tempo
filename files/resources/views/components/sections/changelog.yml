@@ -1,0 +1,27 @@
+# The visual editor's contract for changelog.blade.php.
+title: Changelog entries
+description: Every release, newest first, version and date on a narrow spine
+fields:
+    items:
+        type: repeater
+        label: "Entries"
+        add_button_label: "Add entry"
+        item_label: title
+        source: collections.changelog
+        sub_fields:
+            version:
+                type: text
+                label: "Version"
+                default: "1.0"
+            dateFormatted:
+                type: text
+                label: "Date"
+                default: "June 1, 2027"
+            title:
+                type: text
+                label: "Title"
+                default: "What shipped"
+            content:
+                type: richtext
+                label: "Body"
+                default: "<p>What changed, and why.</p>"

@@ -1,0 +1,34 @@
+[
+    {
+        "title": "Unlimited bookings",
+        "body": "However many land in a month, the price does not move."
+    },
+    {
+        "title": "Unlimited event types",
+        "body": "A different length, location and set of rules for each one."
+    },
+    {
+        "title": "Calendar conflict checks",
+        "body": "Every connected calendar is read before a time is offered."
+    },
+    {
+        "title": "Time-zone detection",
+        "body": "Visitors see their own hours, and the zone we picked for them."
+    },
+    {
+        "title": "Buffers and daily limits",
+        "body": "Minimum notice, a gap either side, and a cap on the day."
+    },
+    {
+        "title": "Reschedule and cancel links",
+        "body": "In every invite, so nobody has to email you about it."
+    },
+    {
+        "title": "Thirty languages",
+        "body": "Chosen by the visitor's browser, changeable by hand."
+    },
+    {
+        "title": "Embeds and an API",
+        "body": "Inline, popup or behind a button, and a REST API underneath."
+    }
+]

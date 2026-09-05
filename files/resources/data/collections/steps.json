@@ -1,0 +1,20 @@
+[
+    {
+        "number": "01",
+        "title": "Connect the calendars you already keep",
+        "body": "Tempo reads all of them at once, so a dentist appointment blocks a sales call without you moving anything across.",
+        "mock": "calendars"
+    },
+    {
+        "number": "02",
+        "title": "Say when you actually work",
+        "body": "Weekday windows, a buffer either side, a cap on the day. Set it once and every event type follows the same rules.",
+        "mock": "availability"
+    },
+    {
+        "number": "03",
+        "title": "Share one link",
+        "body": "The other person opens it, sees only the times that already work, and picks one. It lands in both calendars.",
+        "mock": "link"
+    }
+]

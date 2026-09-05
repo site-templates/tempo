@@ -1,0 +1,90 @@
+# The visual editor's contract for benefits.blade.php.
+title: Benefits
+description: Four benefits in an asymmetric grid, each with a drawn screen
+fields:
+    heading:
+        type: text
+        label: "Heading"
+        default: "The rules that keep your week yours"
+    body:
+        type: textarea
+        label: "One paragraph"
+        rows: 3
+        default: "A booking link is only useful if it refuses the wrong bookings. These are the four that do the most work."
+    items:
+        type: repeater
+        label: "Benefits"
+        add_button_label: "Add benefit"
+        item_label: title
+        source: collections.benefits
+        sub_fields:
+            title:
+                type: text
+                label: "Title"
+                default: "A new benefit"
+            body:
+                type: textarea
+                label: "Text"
+                default: "What it does for the reader."
+            mock:
+                type: select
+                label: "Drawn screen"
+                default: "limits"
+                options:
+                    limits: "Notice and buffers"
+                    link: "Booking link"
+                    overlay: "Calendar overlay"
+                    reminder: "Booking notification"
+            width:
+                type: select
+                label: "Width"
+                default: "narrow"
+                options:
+                    wide: "Two columns"
+                    narrow: "One column"
+    columns:
+        type: repeater
+        label: "Overlay columns"
+        add_button_label: "Add column"
+        item_label: day
+        source: collections.weekColumns
+        sub_fields:
+            day:
+                type: text
+                label: "Weekday"
+                default: "Mon"
+            date:
+                type: text
+                label: "Date"
+                default: "14"
+    events:
+        type: repeater
+        label: "Overlay blocks"
+        add_button_label: "Add block"
+        item_label: label
+        source: collections.weekEvents
+        sub_fields:
+            column:
+                type: text
+                label: "Weekday"
+                default: "Mon"
+            label:
+                type: text
+                label: "Label"
+                default: "Free"
+            kind:
+                type: select
+                label: "Kind"
+                default: "free"
+                options:
+                    yours: "Yours"
+                    theirs: "Theirs"
+                    free: "Free for both"
+            size:
+                type: select
+                label: "Height"
+                default: "md"
+                options:
+                    sm: "Short"
+                    md: "Medium"
+                    lg: "Tall"

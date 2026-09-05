@@ -1,0 +1,28 @@
+# The visual editor's contract for capabilities.blade.php.
+title: Capability index
+description: A two-column, hairline-separated index of smaller capabilities
+fields:
+    heading:
+        type: text
+        label: "Heading"
+        default: "And the smaller things you only notice once"
+    body:
+        type: textarea
+        label: "One paragraph"
+        rows: 3
+        default: "None of these are the reason anybody signs up. All of them are the reason nobody leaves."
+    items:
+        type: repeater
+        label: "Capabilities"
+        add_button_label: "Add capability"
+        item_label: title
+        source: collections.capabilities
+        sub_fields:
+            title:
+                type: text
+                label: "Title"
+                default: "A new capability"
+            body:
+                type: textarea
+                label: "One line"
+                default: "What it does, in a sentence."

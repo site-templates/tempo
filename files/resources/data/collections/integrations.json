@@ -1,0 +1,34 @@
+[
+    {
+        "name": "Align",
+        "image": "https://assets.ui.sh/logos/align.svg?color=%236f727a"
+    },
+    {
+        "name": "Artifact",
+        "image": "https://assets.ui.sh/logos/artifact.svg?color=%236f727a"
+    },
+    {
+        "name": "Axiom",
+        "image": "https://assets.ui.sh/logos/axiom.svg?color=%236f727a"
+    },
+    {
+        "name": "Concise",
+        "image": "https://assets.ui.sh/logos/concise.svg?color=%236f727a"
+    },
+    {
+        "name": "Looply",
+        "image": "https://assets.ui.sh/logos/looply.svg?color=%236f727a"
+    },
+    {
+        "name": "Orbital",
+        "image": "https://assets.ui.sh/logos/orbital.svg?color=%236f727a"
+    },
+    {
+        "name": "Pinelabs",
+        "image": "https://assets.ui.sh/logos/pinelabs.svg?color=%236f727a"
+    },
+    {
+        "name": "Quirk",
+        "image": "https://assets.ui.sh/logos/quirk.svg?color=%236f727a"
+    }
+]

@@ -1,0 +1,43 @@
+# The visual editor's contract for calendars.blade.php.
+title: Connected calendars
+description: The drawn calendar list — which calendars are read, and which one receives bookings
+fields:
+    heading:
+        type: text
+        label: "Card heading"
+        default: "Connected calendars"
+    note:
+        type: textarea
+        label: "Footnote"
+        rows: 2
+        default: "Bookings are written to Studio. All three are checked for conflicts."
+    readsLabel:
+        type: text
+        label: "Read-only label"
+        default: "Checked"
+    writesLabel:
+        type: text
+        label: "Receives-bookings label"
+        default: "Receives bookings"
+    calendars:
+        type: repeater
+        label: "Calendars"
+        add_button_label: "Add calendar"
+        item_label: name
+        source: collections.calendars
+        sub_fields:
+            name:
+                type: text
+                label: "Name"
+                default: "Work"
+            detail:
+                type: text
+                label: "Account or note"
+                default: "you@example.com"
+            state:
+                type: select
+                label: "State"
+                default: "reads"
+                options:
+                    reads: "Checked for conflicts"
+                    writes: "Receives bookings"

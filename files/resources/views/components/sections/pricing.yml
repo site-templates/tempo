@@ -1,0 +1,89 @@
+# The visual editor's contract for pricing.blade.php.
+title: Plans
+description: Three plans, a monthly and yearly toggle, and the features in each
+fields:
+    showHeading:
+        type: toggle
+        label: "Show the heading"
+        description: "Turn off when the page above already introduces the plans."
+        default: "1"
+    heading:
+        type: text
+        label: "Heading"
+        default: "One price, whichever way you count"
+    body:
+        type: textarea
+        label: "One paragraph"
+        rows: 3
+        default: "Free for one person forever. Everything paid is charged per person, per month, and you can leave in one click."
+    monthlyLabel:
+        type: text
+        label: "Monthly label"
+        default: "Monthly"
+    yearlyLabel:
+        type: text
+        label: "Yearly label"
+        default: "Yearly"
+    saveLabel:
+        type: text
+        label: "Saving note"
+        default: "Save 15%"
+    perLabel:
+        type: text
+        label: "Price suffix"
+        default: "per person, per month"
+    featuredLabel:
+        type: text
+        label: "Badge on the featured plan"
+        default: "Most popular"
+    tiers:
+        type: repeater
+        label: "Plans"
+        add_button_label: "Add plan"
+        item_label: name
+        source: collections.tiers
+        sub_fields:
+            name:
+                type: text
+                label: "Name"
+                default: "New plan"
+            audience:
+                type: textarea
+                label: "Who it is for"
+                default: "For a new kind of customer."
+            monthly:
+                type: text
+                label: "Monthly price"
+                default: "$0"
+            yearly:
+                type: text
+                label: "Yearly price"
+                default: "$0"
+            cta:
+                type: text
+                label: "Button text"
+                default: "Start for free"
+            link:
+                type: url
+                label: "Button link"
+                default: "#"
+            featured:
+                type: toggle
+                label: "Featured"
+                default: "0"
+    points:
+        type: repeater
+        label: "Plan features"
+        description: "Each feature belongs to the plan whose name matches."
+        add_button_label: "Add feature"
+        item_label: title
+        source: collections.tierFeatures
+        sub_fields:
+            tier:
+                type: text
+                label: "Belongs to plan"
+                default: "Free"
+            title:
+                type: text
+                label: "Feature"
+                default: "Something included"

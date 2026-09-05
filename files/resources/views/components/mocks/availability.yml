@@ -1,0 +1,40 @@
+# The visual editor's contract for availability.blade.php.
+title: Working hours
+description: The drawn availability editor — one row a day, with a switch and two times
+fields:
+    heading:
+        type: text
+        label: "Card heading"
+        default: "Working hours"
+    note:
+        type: textarea
+        label: "Footnote"
+        rows: 2
+        default: "Applies to every event type unless one overrides it."
+    offLabel:
+        type: text
+        label: "Unavailable label"
+        default: "Unavailable"
+    hours:
+        type: repeater
+        label: "Days"
+        add_button_label: "Add day"
+        item_label: day
+        source: collections.hours
+        sub_fields:
+            day:
+                type: text
+                label: "Day"
+                default: "Mon"
+            from:
+                type: text
+                label: "From"
+                default: "9:00 am"
+            to:
+                type: text
+                label: "To"
+                default: "5:00 pm"
+            on:
+                type: toggle
+                label: "Available"
+                default: "1"

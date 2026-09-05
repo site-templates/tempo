@@ -1,0 +1,34 @@
+[
+    {
+        "title": "Payments",
+        "body": "Take a deposit or the whole fee at the moment of booking."
+    },
+    {
+        "title": "Video links",
+        "body": "A meeting room is created and attached as soon as a booking lands."
+    },
+    {
+        "title": "Routing forms",
+        "body": "Ask two questions, then send the answer to the right person's calendar."
+    },
+    {
+        "title": "Recurring events",
+        "body": "Book a weekly one-to-one for the next twelve weeks in a single pass."
+    },
+    {
+        "title": "Team pooling",
+        "body": "Share the load round-robin, or find the one slot everybody has free."
+    },
+    {
+        "title": "Workflows",
+        "body": "Reminders, follow-ups and surveys that send themselves on your schedule."
+    },
+    {
+        "title": "Thirty languages",
+        "body": "Your booking page arrives in whichever one the visitor's browser asks for."
+    },
+    {
+        "title": "Embeds",
+        "body": "Put the whole booking page inside your own site with one line of markup."
+    }
+]

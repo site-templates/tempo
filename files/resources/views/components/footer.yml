@@ -1,0 +1,41 @@
+# The visual editor's contract for footer.blade.php.
+# The link columns come from resources/data/site.json (footer_columns), so
+# editing them here changes every page.
+title: Footer
+description: The mark, what the product is for, and four columns of links
+fields:
+    brand:
+        type: text
+        label: Site name
+        default: "Tempo"
+    mission:
+        type: textarea
+        label: What the product is for
+        rows: 3
+        default: "Tempo is scheduling that stays out of the way. Share one link, keep one calendar, and let the other person pick the time that works."
+    note:
+        type: textarea
+        label: Left footnote
+        rows: 2
+        default: "Every plan includes unlimited event types, unlimited bookings, and a booking page you can put your own name on."
+    legal:
+        type: textarea
+        label: Right footnote
+        rows: 2
+        default: "Tempo is a demo product built for this template. Swap the copy, the links and the mark for your own."
+    columns:
+        type: repeater
+        label: Link columns
+        add_button_label: "Add column"
+        item_label: text
+        nestable: true
+        source: site.footer_columns
+        sub_fields:
+            text:
+                type: text
+                label: Heading
+                default: "New column"
+            url:
+                type: url
+                label: Heading link
+                default: "/"

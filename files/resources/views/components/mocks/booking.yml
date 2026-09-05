@@ -1,0 +1,128 @@
+# The visual editor's contract for booking.blade.php.
+title: Booking card
+description: The working booking card — host, event, durations, the month, and the times for the chosen day
+fields:
+    host:
+        type: text
+        label: "Host name"
+        default: "Iris Kovalenko"
+    hostAvatar:
+        type: image
+        label: "Host photo"
+        default: "https://assets.ui.sh/avatars/9.webp?size=96&grayscale"
+    eventTitle:
+        type: text
+        label: "Event name"
+        default: "Intro call"
+    eventBody:
+        type: textarea
+        label: "What the meeting is for"
+        rows: 2
+        default: "Fifteen minutes to work out whether we can help. No deck, nothing to prepare."
+    activeDuration:
+        type: text
+        label: "Selected duration"
+        description: "Must match one of the duration labels exactly."
+        default: "30m"
+    locationLabel:
+        type: text
+        label: "Where"
+        default: "Tempo video room"
+    timezoneLabel:
+        type: text
+        label: "Time zone"
+        default: "Europe / Lisbon"
+    monthLabel:
+        type: text
+        label: "Month"
+        default: "June 2027"
+    openLabel:
+        type: text
+        label: "Availability note"
+        description: "Sits beside the pulsing dot above the month."
+        default: "6 days open"
+    defaultDay:
+        type: text
+        label: "Day selected first"
+        description: "The date number that is chosen when the page loads."
+        default: "10"
+    defaultDayLabel:
+        type: text
+        label: "Its full label"
+        description: "Shown above the times, e.g. Thu 10 June."
+        default: "Thu 10 June"
+    confirmTitle:
+        type: text
+        label: "Confirmation heading"
+        default: "You are booked"
+    confirmBody:
+        type: textarea
+        label: "Confirmation text"
+        rows: 3
+        default: "It is in both calendars and the video link is in the invite. Reschedule from the same link any time."
+    confirmAction:
+        type: text
+        label: "Confirmation button"
+        default: "Pick a different time"
+    durations:
+        type: repeater
+        label: "Durations"
+        add_button_label: "Add duration"
+        item_label: label
+        source: collections.durations
+        sub_fields:
+            label:
+                type: text
+                label: "Label"
+                default: "15m"
+    weekdays:
+        type: repeater
+        label: "Weekday labels"
+        add_button_label: "Add day"
+        item_label: label
+        source: collections.weekdays
+        sub_fields:
+            label:
+                type: text
+                label: "Label"
+                default: "Sun"
+    days:
+        type: repeater
+        label: "The month grid"
+        description: "Thirty-five cells, in order. The blank cells are the gaps before the first and after the last of the month."
+        add_button_label: "Add day"
+        item_label: day
+        source: collections.days
+        sub_fields:
+            day:
+                type: text
+                label: "Date number"
+                default: ""
+            label:
+                type: text
+                label: "Full label"
+                default: ""
+            state:
+                type: select
+                label: "State"
+                default: "none"
+                options:
+                    open: "Times available"
+                    none: "No availability"
+                    blank: "Empty cell"
+    slots:
+        type: repeater
+        label: "Times"
+        description: "Each time belongs to the day whose date number matches."
+        add_button_label: "Add time"
+        item_label: time
+        source: collections.slots
+        sub_fields:
+            date:
+                type: text
+                label: "Belongs to date"
+                default: "10"
+            time:
+                type: text
+                label: "Time"
+                default: "9:00 am"

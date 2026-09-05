@@ -1,0 +1,125 @@
+# The visual editor's contract for hero.blade.php.
+title: Hero
+description: The opening split — announcement chip, headline, two buttons, the rating line, and the booking card
+fields:
+    showChip:
+        type: toggle
+        label: "Show announcement chip"
+        default: "1"
+    chipTag:
+        type: text
+        label: "Chip tag"
+        default: "New"
+    chipText:
+        type: text
+        label: "Chip text"
+        default: "Routing forms are out of beta"
+    chipLink:
+        type: url
+        label: "Chip link"
+        default: "/changelog"
+    heading:
+        type: text
+        label: "Headline"
+        default: "The unhurried way to agree on a time"
+    body:
+        type: textarea
+        label: "One sentence"
+        rows: 3
+        default: "Tempo holds your real availability behind one link. People pick a time that already works, and it lands in both calendars."
+    ctaText:
+        type: text
+        label: "Button text"
+        default: "Start for free"
+    ctaLink:
+        type: url
+        label: "Button link"
+        default: "#"
+    showSecondary:
+        type: toggle
+        label: "Show second button"
+        default: "1"
+    secondaryText:
+        type: text
+        label: "Second button text"
+        default: "Book a demo"
+    secondaryLink:
+        type: url
+        label: "Second button link"
+        default: "#"
+    note:
+        type: text
+        label: "Line under the buttons"
+        default: "No credit card. Free forever for one person."
+    showRating:
+        type: toggle
+        label: "Show the rating line"
+        default: "1"
+    ratingScore:
+        type: text
+        label: "Score"
+        default: "4.9"
+    ratingLabel:
+        type: text
+        label: "What the score is from"
+        default: "from 1,240 reviews across three review sites"
+    durations:
+        type: repeater
+        label: "Durations"
+        add_button_label: "Add duration"
+        item_label: label
+        source: collections.durations
+        sub_fields:
+            label:
+                type: text
+                label: "Label"
+                default: "15m"
+    weekdays:
+        type: repeater
+        label: "Weekday labels"
+        add_button_label: "Add day"
+        item_label: label
+        source: collections.weekdays
+        sub_fields:
+            label:
+                type: text
+                label: "Label"
+                default: "Sun"
+    days:
+        type: repeater
+        label: "The month grid"
+        add_button_label: "Add day"
+        item_label: day
+        source: collections.days
+        sub_fields:
+            day:
+                type: text
+                label: "Date number"
+                default: ""
+            label:
+                type: text
+                label: "Full label"
+                default: ""
+            state:
+                type: select
+                label: "State"
+                default: "none"
+                options:
+                    open: "Times available"
+                    none: "No availability"
+                    blank: "Empty cell"
+    slots:
+        type: repeater
+        label: "Times"
+        add_button_label: "Add time"
+        item_label: time
+        source: collections.slots
+        sub_fields:
+            date:
+                type: text
+                label: "Belongs to date"
+                default: "10"
+            time:
+                type: text
+                label: "Time"
+                default: "9:00 am"

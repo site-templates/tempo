@@ -1,0 +1,661 @@
+/*
+    Tempo — the whole design system, in one file.
+
+    Every colour, face and shadow this template uses is declared once, here, in
+    the theme block. Section markup never writes a raw hex or a bg-zinc-* class:
+    it writes bg-canvas, bg-surface, text-ink, text-muted, border-line,
+    bg-carbon, text-accent, font-display. Retune a token below and the whole
+    site follows.
+
+    The palette is monochrome by rule. Paper grey for the page, white for every
+    card, carbon for the filled button and the one dark band — and a single blue
+    that is allowed to appear no more than twice per screen. Nothing else gets
+    colour, not even a confirmation tick.
+*/
+
+@theme {
+    /* Surfaces, from the page ground up. */
+    --color-canvas: #f4f4f4;
+    --color-surface: #ffffff;
+    --color-raised: #ededed;
+    --color-well: #e2e2e2;
+
+    /*
+        Three text tiers. On paper they measure 14.1:1, 5.5:1 and 4.4:1 — which
+        is why faint is only ever used on a white card, where it clears 4.8:1,
+        and never for a sentence.
+    */
+    --color-ink: #242424;
+    --color-muted: #5f636b;
+    --color-faint: #6f727a;
+
+    /* Hairlines are alpha, so they sit correctly on paper and on white. */
+    --color-line: rgb(16 16 16 / 0.09);
+    --color-line-strong: rgb(16 16 16 / 0.16);
+
+    /* The strongest tone: the filled button, the dark band, the mark. */
+    --color-carbon: #101010;
+    --color-carbon-lift: #2b2b2b;
+    --color-carbon-ink: #ffffff;
+    --color-carbon-muted: #a7a9ad;
+    --color-carbon-line: rgb(255 255 255 / 0.14);
+
+    /*
+        The one colour. accent carries text (5.4:1 on white, 4.9:1 on paper);
+        accent-bright is the reference's own blue at 3.0:1, kept for pips, bars
+        and fills, and never allowed to carry a word.
+    */
+    --color-accent: #006ac9;
+    --color-accent-lift: #0057a8;
+    --color-accent-ink: #ffffff;
+    --color-accent-bright: #0099ff;
+    --color-accent-wash: #eaf5ff;
+
+    /* Outfit is geometric and open; Inter runs light and tightly tracked. */
+    --font-display: "Outfit", ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+    /* 1200px — the reference's own container. */
+    --container-page: 75rem;
+
+    /* Three elevations, all offset-and-blur. Nothing casts more than pop. */
+    --shadow-card: rgb(36 36 36 / 0.05) 0 4px 8px 0;
+    --shadow-raise: rgb(36 36 36 / 0.06) 0 1px 2px 0, rgb(36 36 36 / 0.06) 0 6px 14px -4px;
+    --shadow-pop: rgb(16 16 16 / 0.08) 0 2px 6px -2px, rgb(16 16 16 / 0.1) 0 12px 28px -8px;
+
+    /* One easing for everything that moves: quick out, long soft settle. */
+    --ease-glide: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+    background-color: var(--color-canvas);
+    color-scheme: light;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* One stray wide element must never give the whole page a sideways scroll. */
+body {
+    overflow-x: clip;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    letter-spacing: -0.012em;
+}
+
+/* Anchored sections land below the floating header instead of underneath it. */
+[id] {
+    scroll-margin-top: 7rem;
+}
+
+::selection {
+    background-color: var(--color-accent-wash);
+    color: var(--color-ink);
+}
+
+/* A crisp ring instead of the browser's default halo. Keyboard users only. */
+:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/*
+    Comfortable thumbs. On touch screens a text link grows a 44px hit area
+    through padding cancelled by a negative margin, so nothing in the layout
+    moves and nothing is smaller than a fingertip.
+*/
+@media (pointer: coarse) {
+    .text-link {
+        padding-block: 0.75rem;
+        margin-block: -0.75rem;
+    }
+}
+
+/* ── Type ──────────────────────────────────────────────────────────────── */
+
+/*
+    The reference's signature, and the opposite of the usual: display sizes
+    track slightly OPEN while body copy tracks tight. It is what makes the
+    headlines read as friendly-geometric rather than compressed.
+*/
+.display-hero {
+    font-size: clamp(2.75rem, 3.9vw, 3.5rem);
+    line-height: 1.08;
+    letter-spacing: 0.005em;
+}
+
+.display-page {
+    font-size: clamp(2.375rem, 4.4vw, 3.25rem);
+    line-height: 1.08;
+    letter-spacing: 0.005em;
+}
+
+.display-section {
+    font-size: clamp(2rem, 3.2vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: 0.005em;
+}
+
+.title-card {
+    font-size: 1.25rem;
+    line-height: 1.3;
+    letter-spacing: 0.01em;
+}
+
+/* The one paragraph under a heading: larger, lighter, tightly tracked. */
+.lede {
+    font-size: 1.125rem;
+    line-height: 1.5;
+    letter-spacing: -0.011em;
+    font-weight: 300;
+}
+
+@media (min-width: 40rem) {
+    .lede {
+        font-size: 1.1875rem;
+    }
+}
+
+/* ── Header ────────────────────────────────────────────────────────────── */
+
+/*
+    The white pill floats over every page. The Solutions menu opens on hover
+    and on keyboard focus with no script at all; main.js only adds a tap toggle
+    for touch screens (data-open) and the phone menu (data-menu-open).
+*/
+.nav-menu {
+    opacity: 0;
+    visibility: hidden;
+    translate: 0 0.375rem;
+    transition: opacity 0.18s ease, translate 0.18s var(--ease-glide), visibility 0s 0.18s;
+}
+
+.nav-item:hover .nav-menu,
+.nav-item:focus-within .nav-menu,
+.nav-item[data-open] .nav-menu {
+    opacity: 1;
+    visibility: visible;
+    translate: 0 0;
+    transition: opacity 0.18s ease, translate 0.18s var(--ease-glide), visibility 0s;
+}
+
+.nav-item:hover .nav-chevron,
+.nav-item:focus-within .nav-chevron,
+.nav-item[data-open] .nav-chevron {
+    rotate: 180deg;
+}
+
+.nav-chevron {
+    transition: rotate 0.18s var(--ease-glide);
+}
+
+/* The phone menu panel: closed by default, main.js toggles data-menu-open. */
+#mobile-menu {
+    display: none;
+}
+
+#header[data-menu-open] #mobile-menu {
+    display: block;
+}
+
+#header[data-menu-open] .menu-icon-open,
+#header:not([data-menu-open]) .menu-icon-close {
+    display: none;
+}
+
+/* ── Buttons ───────────────────────────────────────────────────────────── */
+
+/*
+    A binary system of action, straight from the reference: an action is either
+    solid carbon or a white pill in a hairline. Nothing in between, no outline
+    button, no third colour. .btn-sm is the header and card size, .btn-lg the
+    hero. The header's rectangular radius is its own rule below.
+*/
+.btn-solid,
+.btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.375rem;
+    height: 2.625rem;
+    padding: 0 1.25rem;
+    border-radius: 9999px;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    letter-spacing: -0.014em;
+    white-space: nowrap;
+    transition: background-color 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
+}
+
+.btn-solid {
+    background-color: var(--color-carbon);
+    color: var(--color-carbon-ink);
+    box-shadow: var(--shadow-card);
+}
+
+.btn-solid:hover {
+    background-color: var(--color-carbon-lift);
+}
+
+.btn-solid:active {
+    background-color: var(--color-carbon);
+    box-shadow: none;
+}
+
+.btn-ghost {
+    background-color: var(--color-surface);
+    color: var(--color-ink);
+    box-shadow: 0 0 0 1px var(--color-line-strong), var(--shadow-card);
+}
+
+.btn-ghost:hover {
+    background-color: var(--color-canvas);
+}
+
+.btn-ghost:active {
+    background-color: var(--color-raised);
+    box-shadow: 0 0 0 1px var(--color-line-strong);
+}
+
+.btn-sm {
+    height: 2.25rem;
+    padding: 0 0.875rem;
+    font-size: 0.875rem;
+}
+
+.btn-lg {
+    height: 3rem;
+    padding: 0 1.5rem;
+    font-size: 1rem;
+}
+
+/* The header's own button keeps the reference's rectangular 8px radius. */
+.btn-rect {
+    border-radius: 0.5rem;
+}
+
+/* A carbon button standing on the dark band inverts to white on carbon. */
+.btn-invert {
+    background-color: var(--color-carbon-ink);
+    color: var(--color-carbon);
+    box-shadow: none;
+}
+
+.btn-invert:hover {
+    background-color: #e8e8e8;
+}
+
+.btn-invert:active {
+    background-color: var(--color-carbon-ink);
+}
+
+/* The chevron every button and link carries nudges forward on hover. */
+.btn-solid .arrow,
+.btn-ghost .arrow,
+.text-link .arrow {
+    transition: translate 0.15s var(--ease-glide);
+}
+
+.btn-solid:hover .arrow,
+.btn-ghost:hover .arrow,
+.text-link:hover .arrow {
+    translate: 0.125rem 0;
+}
+
+/* ── The booking stage ─────────────────────────────────────────────────── */
+
+/*
+    Tempo's signature. A working booking card: durations on the left, a month
+    on the right, and a slot column that appears once a date is picked. Choosing
+    a slot flips the whole card to its confirmation face. Every state below is
+    driven by one data attribute on the stage, so the markup stays declarative
+    and the whole thing degrades to a readable static card without JavaScript.
+*/
+.stage-date {
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.stage-date[aria-pressed="true"] {
+    background-color: var(--color-accent);
+    color: var(--color-accent-ink);
+}
+
+.stage-date[aria-pressed="true"] .stage-pip {
+    background-color: var(--color-accent-ink);
+}
+
+.stage-slots {
+    scrollbar-width: thin;
+}
+
+/* Each date's slot list shares one cell; the selected date's list is shown. */
+.stage-slot-list {
+    grid-area: 1 / 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.18s ease, visibility 0s 0.18s;
+}
+
+.stage-slot-list[data-current] {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.18s ease, visibility 0s;
+}
+
+.stage-slot {
+    box-shadow: 0 0 0 1px var(--color-line);
+    transition: background-color 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
+}
+
+.stage-slot:hover {
+    background-color: var(--color-accent-wash);
+    color: var(--color-accent);
+    box-shadow: 0 0 0 1px var(--color-accent);
+}
+
+/* The two faces share one grid cell so the card never changes height. */
+.stage-face {
+    grid-area: 1 / 1;
+    transition: opacity 0.22s ease, visibility 0s 0.22s;
+}
+
+.stage[data-face="book"] .stage-face-book,
+.stage[data-face="done"] .stage-face-done {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.28s ease 0.06s, visibility 0s;
+}
+
+.stage[data-face="book"] .stage-face-done,
+.stage[data-face="done"] .stage-face-book {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* The confirmation tick draws itself once the card flips. */
+.stage-tick {
+    stroke-dasharray: 24;
+    stroke-dashoffset: 24;
+}
+
+.stage[data-face="done"] .stage-tick,
+html:not(.js) .stage-tick {
+    animation: tick-draw 0.5s var(--ease-glide) 0.15s forwards;
+}
+
+@keyframes tick-draw {
+    to { stroke-dashoffset: 0; }
+}
+
+/* The availability pip breathes so the card reads as live, not printed. */
+.live-pip::after {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: 9999px;
+    border: 1.5px solid currentColor;
+    opacity: 0;
+    animation: live-ring 2.4s ease-out infinite;
+}
+
+@keyframes live-ring {
+    0% { transform: scale(0.6); opacity: 0.6; }
+    100% { transform: scale(1.7); opacity: 0; }
+}
+
+/* ── Availability mock ─────────────────────────────────────────────────── */
+
+/* A native-looking switch, drawn: the knob slides when the row is on. */
+.switch-knob {
+    transition: translate 0.2s var(--ease-glide);
+}
+
+[data-on] .switch-knob {
+    translate: 100% 0;
+}
+
+/* ── Pricing ───────────────────────────────────────────────────────────── */
+
+/* Both prices ship in the markup; the section's data-period decides which shows. */
+[data-period="monthly"] .price-yearly,
+[data-period="yearly"] .price-monthly {
+    display: none;
+}
+
+[data-period="monthly"] .toggle-thumb {
+    translate: 0 0;
+}
+
+[data-period="yearly"] .toggle-thumb {
+    translate: 100% 0;
+}
+
+.toggle-thumb {
+    transition: translate 0.25s var(--ease-glide);
+}
+
+/* ── FAQ ───────────────────────────────────────────────────────────────── */
+
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+details .faq-answer {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.32s var(--ease-glide);
+}
+
+details[open] .faq-answer {
+    grid-template-rows: 1fr;
+}
+
+details .faq-answer > * {
+    overflow: hidden;
+}
+
+details[open] .faq-sign {
+    rotate: 45deg;
+}
+
+.faq-sign {
+    transition: rotate 0.25s var(--ease-glide);
+}
+
+/* ── Scroll reveals ────────────────────────────────────────────────────── */
+
+/*
+    Whole blocks fade and rise once as they scroll into view — never each card
+    inside one. Only when JavaScript is present: without it nothing is hidden.
+*/
+html.js [data-reveal] {
+    opacity: 0;
+    translate: 0 0.625rem;
+    transition:
+        opacity 0.7s var(--ease-glide),
+        translate 0.7s var(--ease-glide);
+}
+
+html.js [data-reveal].is-visible {
+    opacity: 1;
+    translate: 0 0;
+}
+
+/* Grids stagger their children by position; nothing is computed per item. */
+html.js .stagger > *:nth-child(2) {
+    transition-delay: 0.08s;
+}
+
+html.js .stagger > *:nth-child(3) {
+    transition-delay: 0.16s;
+}
+
+html.js .stagger > *:nth-child(4) {
+    transition-delay: 0.24s;
+}
+
+/* ── Prose ─────────────────────────────────────────────────────────────── */
+
+/*
+    Blog posts and changelog entries arrive as raw HTML from their collection,
+    so the reading styles live here rather than on each tag.
+*/
+.prose {
+    color: var(--color-muted);
+    font-size: 1.0625rem;
+    line-height: 1.75;
+}
+
+.prose > * + * {
+    margin-top: 1.25em;
+}
+
+.prose h2,
+.prose h3,
+.prose h4 {
+    font-family: var(--font-display);
+    color: var(--color-ink);
+    font-weight: 600;
+    letter-spacing: 0.005em;
+    text-wrap: balance;
+}
+
+.prose h2 {
+    font-size: 1.625rem;
+    line-height: 1.2;
+    margin-top: 2.25em;
+}
+
+.prose h3 {
+    font-size: 1.25rem;
+    line-height: 1.3;
+    margin-top: 1.75em;
+}
+
+.prose h2 + *,
+.prose h3 + * {
+    margin-top: 0.75em;
+}
+
+.prose strong {
+    color: var(--color-ink);
+    font-weight: 500;
+}
+
+.prose a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+}
+
+.prose a:hover {
+    text-decoration-thickness: 2px;
+}
+
+.prose ul,
+.prose ol {
+    padding-left: 1.5rem;
+}
+
+.prose ul {
+    list-style: disc;
+}
+
+.prose ol {
+    list-style: decimal;
+}
+
+.prose li + li {
+    margin-top: 0.5em;
+}
+
+.prose li::marker {
+    color: var(--color-faint);
+}
+
+.prose blockquote {
+    border-left: 2px solid var(--color-line-strong);
+    padding-left: 1.5rem;
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-size: 1.375rem;
+    line-height: 1.4;
+    letter-spacing: 0.005em;
+}
+
+.prose code {
+    font-size: 0.875em;
+    color: var(--color-ink);
+    background-color: var(--color-canvas);
+    border-radius: 0.375rem;
+    padding: 0.125rem 0.375rem;
+}
+
+.prose pre {
+    background-color: var(--color-carbon);
+    color: var(--color-carbon-muted);
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.5rem;
+    overflow-x: auto;
+    font-size: 0.875rem;
+    line-height: 1.7;
+}
+
+.prose pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+}
+
+.prose img {
+    border-radius: 0.75rem;
+    outline: 1px solid var(--color-line);
+    outline-offset: -1px;
+}
+
+.prose hr {
+    border: 0;
+    border-top: 1px solid var(--color-line);
+    margin: 3em 0;
+}
+
+/* ── Reduced motion ────────────────────────────────────────────────────── */
+
+/*
+    Everything above resolves to its resting, fully visible state. No reveal
+    ever leaves content hidden, the pip stops breathing, the tick is simply
+    drawn, and the booking card still books.
+*/
+@media (prefers-reduced-motion: reduce) {
+    html.js [data-reveal] {
+        opacity: 1;
+        translate: 0 0;
+        transition: none;
+    }
+
+    .live-pip::after {
+        animation: none;
+    }
+
+    .stage-tick {
+        stroke-dashoffset: 0;
+        animation: none;
+    }
+
+    .stage-face,
+    .stage-slot-list,
+    .stage-slot,
+    .stage-date,
+    .switch-knob,
+    .toggle-thumb,
+    .faq-sign,
+    .nav-menu,
+    .nav-chevron,
+    .btn-solid .arrow,
+    .btn-ghost .arrow,
+    .text-link .arrow,
+    details .faq-answer {
+        transition: none;
+    }
+}

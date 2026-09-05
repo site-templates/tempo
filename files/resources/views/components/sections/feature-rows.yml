@@ -1,0 +1,184 @@
+# The visual editor's contract for feature-rows.blade.php.
+title: Feature rows
+description: One row per audience, the drawn screen alternating sides
+fields:
+    items:
+        type: repeater
+        label: "Rows"
+        add_button_label: "Add row"
+        item_label: title
+        source: collections.features
+        sub_fields:
+            id:
+                type: text
+                label: "Anchor"
+                default: "new-row"
+            title:
+                type: text
+                label: "Title"
+                default: "A new row"
+            body:
+                type: textarea
+                label: "Text"
+                default: "What this audience gets out of it."
+            mock:
+                type: select
+                label: "Drawn screen"
+                default: "booking"
+                options:
+                    booking: "Booking card"
+                    overlay: "Calendar overlay"
+                    availability: "Working hours"
+                    reminder: "Booking notification"
+            flip:
+                type: select
+                label: "Screen side"
+                default: "0"
+                options:
+                    0: "On the right"
+                    1: "On the left"
+    points:
+        type: repeater
+        label: "Bullet points"
+        description: "Each point belongs to the row whose anchor matches."
+        add_button_label: "Add point"
+        item_label: title
+        source: collections.featurePoints
+        sub_fields:
+            feature:
+                type: text
+                label: "Belongs to anchor"
+                default: "individuals"
+            title:
+                type: text
+                label: "Point"
+                default: "Something it does"
+    durations:
+        type: repeater
+        label: "Durations"
+        add_button_label: "Add duration"
+        item_label: label
+        source: collections.durations
+        sub_fields:
+            label:
+                type: text
+                label: "Label"
+                default: "15m"
+    weekdays:
+        type: repeater
+        label: "Weekday labels"
+        add_button_label: "Add day"
+        item_label: label
+        source: collections.weekdays
+        sub_fields:
+            label:
+                type: text
+                label: "Label"
+                default: "Sun"
+    days:
+        type: repeater
+        label: "The month grid"
+        add_button_label: "Add day"
+        item_label: day
+        source: collections.days
+        sub_fields:
+            day:
+                type: text
+                label: "Date number"
+                default: ""
+            label:
+                type: text
+                label: "Full label"
+                default: ""
+            state:
+                type: select
+                label: "State"
+                default: "none"
+                options:
+                    open: "Times available"
+                    none: "No availability"
+                    blank: "Empty cell"
+    slots:
+        type: repeater
+        label: "Times"
+        add_button_label: "Add time"
+        item_label: time
+        source: collections.slots
+        sub_fields:
+            date:
+                type: text
+                label: "Belongs to date"
+                default: "10"
+            time:
+                type: text
+                label: "Time"
+                default: "9:00 am"
+    hours:
+        type: repeater
+        label: "Working hours"
+        add_button_label: "Add day"
+        item_label: day
+        source: collections.hours
+        sub_fields:
+            day:
+                type: text
+                label: "Day"
+                default: "Mon"
+            from:
+                type: text
+                label: "From"
+                default: "9:00 am"
+            to:
+                type: text
+                label: "To"
+                default: "5:00 pm"
+            on:
+                type: toggle
+                label: "Available"
+                default: "1"
+    columns:
+        type: repeater
+        label: "Overlay columns"
+        add_button_label: "Add column"
+        item_label: day
+        source: collections.weekColumns
+        sub_fields:
+            day:
+                type: text
+                label: "Weekday"
+                default: "Mon"
+            date:
+                type: text
+                label: "Date"
+                default: "14"
+    events:
+        type: repeater
+        label: "Overlay blocks"
+        add_button_label: "Add block"
+        item_label: label
+        source: collections.weekEvents
+        sub_fields:
+            column:
+                type: text
+                label: "Weekday"
+                default: "Mon"
+            label:
+                type: text
+                label: "Label"
+                default: "Free"
+            kind:
+                type: select
+                label: "Kind"
+                default: "free"
+                options:
+                    yours: "Yours"
+                    theirs: "Theirs"
+                    free: "Free for both"
+            size:
+                type: select
+                label: "Height"
+                default: "md"
+                options:
+                    sm: "Short"
+                    md: "Medium"
+                    lg: "Tall"

@@ -1,0 +1,44 @@
+# The visual editor's contract for quotes.blade.php.
+title: Testimonials
+description: The dark band — a heading, one large quote, and three short ones below
+fields:
+    heading:
+        type: text
+        label: "Heading"
+        default: "What people say once they have stopped emailing"
+    body:
+        type: textarea
+        label: "One paragraph"
+        rows: 3
+        default: "The compliment we get most often is that nobody mentions the software any more."
+    items:
+        type: repeater
+        label: "Quotes"
+        description: "Exactly one quote should be the featured one."
+        add_button_label: "Add quote"
+        item_label: name
+        source: collections.quotes
+        sub_fields:
+            size:
+                type: select
+                label: "Placement"
+                default: "small"
+                options:
+                    large: "The featured quote"
+                    small: "One of the three below"
+            quote:
+                type: textarea
+                label: "Quote"
+                default: "What they said."
+            name:
+                type: text
+                label: "Name"
+                default: "A customer"
+            role:
+                type: text
+                label: "Role and company"
+                default: "Role, Company"
+            avatar:
+                type: image
+                label: "Photo"
+                default: "https://assets.ui.sh/avatars/2.webp?size=96&grayscale"

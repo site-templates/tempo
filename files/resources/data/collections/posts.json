@@ -1,0 +1,50 @@
+[
+    {
+        "slug": "the-cost-of-finding-a-time",
+        "title": "What it actually costs to find a time",
+        "description": "Four emails, two days, and a meeting that ends up in the wrong hour anyway. We measured the thing everybody assumes is free.",
+        "category": "Ideas",
+        "dateFormatted": "May 28, 2027",
+        "readTime": "6 min read",
+        "author": "Rowan Adeyemi",
+        "authorAvatar": "https://assets.ui.sh/avatars/3.webp?size=96&grayscale",
+        "link": "/blog/the-cost-of-finding-a-time",
+        "content": "<p>We went through a quarter of one team's inbox and counted every message whose only purpose was to agree on a time. Not the meeting, not the agenda — just the time. The number was 214.</p><p>Each of those messages was short, which is why nobody notices them. A short message still costs the writing of it, the reading of it, the small decision at the end, and the wait for the reply. Averaged out, a single meeting took four messages spread over a day and a half before anybody said yes.</p><h2>The wait is the expensive part</h2><p>The writing is cheap. The waiting is not. A day and a half of latency in front of every meeting is a day and a half added to the front of every piece of work that needed the meeting to happen. On a sales team that shows up as a slower cycle. On a hiring team it shows up as candidates who took another offer.</p><blockquote>The meeting was never the bottleneck. Agreeing when to have it was.</blockquote><h2>Why the obvious fix fails</h2><p>The obvious fix is to propose three times in the first message. It helps, and it fails often enough to be annoying: by the time the other person answers, one of the three is gone. Now you are on message five, and you have taught them that your calendar is unreliable.</p><p>A booking link fixes the latency because it removes the round trip entirely. The other person sees what is genuinely free at the moment they are looking, picks one, and it is held immediately. The negotiation collapses from four messages to zero.</p><h2>What we would measure next</h2><p>The number we would like next is how many meetings simply never happened because arranging them was too much friction. We suspect it is large, and we suspect most of them should have happened.</p>"
+    },
+    {
+        "slug": "buffers-are-not-optional",
+        "title": "Buffers are not a nice-to-have",
+        "description": "Back-to-back calls do not save time. They move the cost somewhere you cannot see it, and then charge interest.",
+        "category": "Practice",
+        "dateFormatted": "May 12, 2027",
+        "readTime": "4 min read",
+        "author": "Noor Vandel",
+        "authorAvatar": "https://assets.ui.sh/avatars/14.webp?size=96&grayscale",
+        "link": "/blog/buffers-are-not-optional",
+        "content": "<p>A calendar with no gaps looks efficient. It is the opposite. Every meeting that runs two minutes long makes you late for the next one, and being late costs the first two minutes of that meeting as well. The debt compounds across the day and gets paid off at six o'clock.</p><h2>Ten minutes buys the whole day</h2><p>A ten-minute buffer after every meeting does three things. It absorbs the overrun. It gives you time to write down what was agreed while you still remember it. And it means you arrive at the next call having read the name of the person you are about to talk to.</p><p>The objection is always the same: ten minutes times six meetings is an hour of lost capacity. That hour was not capacity. It was the hour you were going to spend at the end of the day writing up notes from meetings you can no longer remember clearly.</p><h2>Set it once</h2><p>The reason people do not use buffers is that adding them by hand, every time, is tedious enough to skip. Set them at the event type instead: a minimum notice so nothing lands in the next ten minutes, a buffer either side, and a cap on the day. Then stop thinking about it.</p>"
+    },
+    {
+        "slug": "time-zones-are-a-user-interface-problem",
+        "title": "Time zones are a user interface problem",
+        "description": "The maths is easy and has been solved for decades. What goes wrong is the sentence you write in the email.",
+        "category": "Engineering",
+        "dateFormatted": "April 24, 2027",
+        "readTime": "7 min read",
+        "author": "Kit Farrow",
+        "authorAvatar": "https://assets.ui.sh/avatars/11.webp?size=96&grayscale",
+        "link": "/blog/time-zones-are-a-user-interface-problem",
+        "content": "<p>Nobody gets the arithmetic wrong. Every language has a library, every library knows the rules, and the rules — including the strange ones — are written down in a database that has been maintained since 1986.</p><p>What goes wrong is the handoff to a person. Somebody writes <code>3pm</code> in an email, means their own three, and sends it to a city seven hours away. The library was never consulted, because there was no software involved at that moment. Just a sentence.</p><h2>Never write a time without its zone</h2><p>The smallest fix is a rule: a time in prose always carries its zone, always. <code>3:00 pm CET</code> is four more characters and removes an entire class of failure.</p><h2>The better fix is not to write it at all</h2><p>A booking page renders every time in the zone of the browser looking at it, which is almost always the right one, and shows the zone it picked so the visitor can correct it. Nobody converts anything. Nobody writes a time in a sentence. The failure mode disappears because the handoff to prose never happens.</p><h2>The one that still catches us</h2><p>Daylight saving does not move on the same weekend everywhere. For two weeks each spring and autumn, the offset between London and New York is not the one anybody has memorised. A recurring meeting booked in March will drift in a way that looks like a bug and is not. Store the zone, not the offset, and recompute every occurrence.</p>"
+    },
+    {
+        "slug": "what-we-do-not-build",
+        "title": "What we have decided not to build",
+        "description": "A short list, kept publicly, of the features we keep being asked for and keep saying no to — and why.",
+        "category": "Product",
+        "dateFormatted": "April 3, 2027",
+        "readTime": "5 min read",
+        "author": "Sasha Nkemelu",
+        "authorAvatar": "https://assets.ui.sh/avatars/7.webp?size=96&grayscale",
+        "link": "/blog/what-we-do-not-build",
+        "content": "<p>Every roadmap is mostly a list of things you said yes to. Ours has a second list, and we think it explains the product better than the first one does.</p><h2>A chat inbox</h2><p>People ask for messaging on the booking page so the two parties can talk before the meeting. We keep saying no. The point of a booking link is that the conversation about when does not happen. Adding a place for it to happen would rebuild the problem inside the fix.</p><h2>Meeting recordings</h2><p>We can attach a video room to a booking. We will not record what happens inside it. That is a different product with different obligations, and doing it badly is worse than not doing it.</p><h2>Availability scoring</h2><p>Several teams have asked for a ranking that nudges bookers toward the slots we would prefer. It works, briefly, and then people notice, and then they stop trusting the page. A calendar that quietly lies about what is free is not a calendar.</p><h2>An analytics suite</h2><p>You can export bookings and put them wherever your other numbers live. We are not going to build a second dashboard for you to ignore.</p>"
+    }
+]
