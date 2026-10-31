@@ -4,7 +4,7 @@
     "description": "A monochrome scheduling site — a white pill header on paper, a working booking card in the hero, drawn product mocks instead of screenshots, one dark quote band, usage pricing, blog and changelog.",
     "icon": "◱",
     "repo": "https://github.com/site-templates/tempo",
-    "order": 47,
+    "order": 86,
     "category": "landing",
     "theme": "light",
     "accent": "#006ac9",
